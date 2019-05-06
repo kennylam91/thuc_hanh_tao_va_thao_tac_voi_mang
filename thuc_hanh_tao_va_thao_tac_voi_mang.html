@@ -6,19 +6,32 @@
 </head>
 <body>
 <h3>Sample Screen:</h3>
-<input type="text">
+<input type="text" id="array_input">
 <button type="button" onclick="add_element_to_array()">ADD</button>
-<button type="button"onclick="display_array()">DISPLAY</button>
+<button type="button" onclick="display_array()">DISPLAY</button>
 <br/><br/>
 <hr/>
+<div id="result"></div>
 
 </body>
 <script>
-    function add_element_to_array(){
-        alert("OK");
+    let array = [];
+    function add_element_to_array() {
+        let input_element = document.getElementById("array_input").value;
+        array.push(input_element);
+        for(i=0;i< array.length;i++){
+
+            let j=i+1;
+
+            show="Element " +j +"= " +array[i]+"<br/>";
+
+        }
+        document.getElementById("result").innerHTML+=show;
+
     }
-    function display_array(){
-        alert("function 2");
+
+    function display_array() {
+        document.getElementById("result").innerHTML+=array;
     }
 </script>
 </html>
