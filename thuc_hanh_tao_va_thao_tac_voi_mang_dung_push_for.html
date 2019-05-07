@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>thao tac voi mang</title>
+    <title>bai_so_1</title>
 </head>
 <body>
 <h3>Sample Screen:</h3>
@@ -13,19 +13,21 @@
 <hr/>
 <div id="result"></div>
 <script>
-    let arrayNew = [];
-    let i=0;
+    let array = [];
+
     function add_element_to_array() {
         let input_element = document.getElementById("array_input").value;//biến lưu giá trị nhập vào từ input
-        arrayNew[i]=input_element;
-        document.getElementById("result").innerHTML += "Element " +(i+1) +"=" +arrayNew[i]+"<br/>";
-        i++;
-        console.log(arrayNew);
-
+        array.push(input_element); //thêm phần tử vào cuối mảng bằng push
+        for (i = 0; i <= array.length - 1; i++) {
+            let j = i + 1;
+            show = "Element " + j + "= " + array[i] + "<br/>";
+        }
+        document.getElementById("result").innerHTML += show;
     }
     function display_array() {
-        document.getElementById("result").innerHTML= arrayNew;
+        document.getElementById("result").innerHTML= array;
     }
 </script>
 </body>
+
 </html>
